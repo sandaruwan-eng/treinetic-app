@@ -24,11 +24,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const HomeMain(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        // '/second': (context) => ProductDetailsScreen(
+        //       arguments: ModalRoute.of(context).settings.arguments,
+        //     ),
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ProductDetailsScreen(),
+      //home: const ProductDetailsScreen(),
       //HomeMain(),
     );
   }

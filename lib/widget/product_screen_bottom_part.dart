@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
+import 'package:sampleapp/models/product.dart';
 
 class ProductScreenBottomPart extends StatelessWidget {
-  const ProductScreenBottomPart({Key? key}) : super(key: key);
+  const ProductScreenBottomPart({Key? key, required this.productItem})
+      : super(key: key);
 
+  final Product productItem;
   @override
   Widget build(BuildContext context) {
     final _appTheme = Theme.of(context);
@@ -39,7 +42,7 @@ class ProductScreenBottomPart extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "Bobo VR Z5",
+                      productItem.title,
                       style: _appTheme.textTheme.headline6!
                           .merge(const TextStyle(color: Colors.black)),
                     ),
@@ -52,7 +55,7 @@ class ProductScreenBottomPart extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "62.88",
+                      productItem.price,
                       style: _appTheme.textTheme.headline6!
                           .merge(const TextStyle(color: Colors.black)),
                     ),
@@ -62,28 +65,28 @@ class ProductScreenBottomPart extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 30 * WidgetsConstant.width),
                 child: Row(
-                  children: const <Widget>[
-                    Icon(
+                  children: <Widget>[
+                    const Icon(
                       Icons.star_outline,
                       color: Colors.amber,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.star_outline,
                       color: Colors.amber,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.star_outline,
                       color: Colors.amber,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.star_outline,
                       color: Colors.amber,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.star_outline,
                       color: Colors.amber,
                     ),
-                    Text("5(28 reviews)"),
+                    Text("${productItem.rating} (28 reviews)"),
                   ],
                 ),
               ),
@@ -95,7 +98,7 @@ class ProductScreenBottomPart extends StatelessWidget {
                 child: SizedBox(
                   height: 95 * WidgetsConstant.height,
                   child: Text(
-                    "data ldjfhsd dfh ofj fow fhnwoelf efkweo mfekfjlw  eifjwe oief iwfj wiofwofo efijweofi wefjioweofi ewifjweoif iewjfiowoefjiojwfioewjfweiifj oiwe iejfow jfoiwefj jf  jewfij ifj eiwfjijf jfiiweifjijr ijfi wjfiowoefjiojwfioewjfweiifj oiwe iejfow jfoiwefj jf  jewfij ifj eiwfjijf jfiiweifjijr ijfi ",
+                    productItem.description,
                     style: _appTheme.textTheme.button!
                         .merge(const TextStyle(color: Colors.grey)),
                   ),
@@ -111,17 +114,16 @@ class ProductScreenBottomPart extends StatelessWidget {
                     Column(
                       children: <Widget>[
                         Container(
-                          width: 40.0 * WidgetsConstant.height,
-                          height: 40.0 * WidgetsConstant.height,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Colors.black,
+                            width: 40.0 * WidgetsConstant.height,
+                            height: 40.0 * WidgetsConstant.height,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          child: const Icon(Icons.ac_unit_outlined),
-                        ),
+                            child: const Icon(Icons.remove_red_eye_sharp)),
                         Padding(
                           padding:
                               EdgeInsets.only(top: 10 * WidgetsConstant.height),
@@ -172,7 +174,7 @@ class ProductScreenBottomPart extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-                          child: const Icon(Icons.ac_unit_outlined),
+                          child: const Icon(Icons.wifi),
                         ),
                         Padding(
                           padding:
@@ -188,14 +190,6 @@ class ProductScreenBottomPart extends StatelessWidget {
                   ],
                 ),
               ),
-              // FlatButton(
-              //   color: Colors.green,
-              //   textColor: Colors.white,
-              //   child: const Text(
-              //     'Flat Button',
-              //   ),
-              //   onPressed: () {},
-              // ),
               Padding(
                 padding: EdgeInsets.only(
                   top: 15.0 * WidgetsConstant.height,

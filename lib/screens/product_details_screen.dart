@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
+import 'package:sampleapp/models/product.dart';
 import 'package:sampleapp/widget/product_screen_bottom_part.dart';
 import 'package:sampleapp/widget/product_screen_top_image.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({Key? key}) : super(key: key);
+  const ProductDetailsScreen({Key? key, required this.arguments})
+      : super(key: key);
 
+  final Product arguments;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,9 +16,9 @@ class ProductDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.blue,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
         ),
         actions: <Widget>[
           Padding(
@@ -28,9 +31,13 @@ class ProductDetailsScreen extends StatelessWidget {
         ],
       ),
       body: Column(
-        children: const <Widget>[
-          ProductScreenTopImage(),
-          ProductScreenBottomPart(),
+        children: <Widget>[
+          ProductScreenTopImage(
+            productItem: arguments,
+          ),
+          ProductScreenBottomPart(
+            productItem: arguments,
+          ),
         ],
       ),
     );

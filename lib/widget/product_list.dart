@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
+import 'package:sampleapp/controller/providers.dart';
+import 'package:sampleapp/models/product.dart';
 
 import 'produce_list_item.dart';
 
@@ -8,16 +11,33 @@ class ProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 250 * WidgetsConstant.height,
-      child: Expanded(
-        child: ListView.builder(
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemCount: 15,
-            itemBuilder: (BuildContext context, int index) =>
-                const ProductListItem()),
-      ),
-    );
+    return Consumer(builder: (context, ref, _) {
+      AsyncValue<List<Product>?> productList = ref.watch(productListProvider);
+
+      return productList.when(
+          data: (list) {
+            print('task list ength ${list![0].description}');
+            return SizedBox(
+              height: 250 * WidgetsConstant.height,
+              child: Expanded(
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: list.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        ProductListItem(
+                          productItem: list[index],
+                        )),
+              ),
+            );
+          },
+          loading: () => Padding(
+                padding: EdgeInsets.only(top: 100.0 * WidgetsConstant.height),
+                child: const Center(child: CircularProgressIndicator()),
+              ),
+          error: (e, stackTrace) {
+            return const Text("error");
+          });
+    });
   }
 }
