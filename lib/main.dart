@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sampleapp/screens/home_main.dart';
 
+import 'screens/product_details_screen.dart';
+
 void main() {
   runApp(
     ProviderScope(
@@ -26,7 +28,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeMain(),
+      home: const ProductDetailsScreen(),
+      //HomeMain(),
     );
   }
 }
