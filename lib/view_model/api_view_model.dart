@@ -5,7 +5,7 @@ import 'package:sampleapp/services/api_service.dart';
 
 Future<List<Product>?> getProductList() async {
   try {
-    Iterable dataBody = await fetchData(UrlConstant.GET_TASK_LIST_URL);
+    Iterable dataBody = await fetchData(UrlConstant.GET_PRODUCT_LIST_URL);
     List<Product> posts =
         List<Product>.from(dataBody.map((model) => Product.fromJson(model)));
     return posts;

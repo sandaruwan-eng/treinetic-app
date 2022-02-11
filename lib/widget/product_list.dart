@@ -3,8 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
 import 'package:sampleapp/controller/providers.dart';
 import 'package:sampleapp/models/product.dart';
-
-import 'produce_list_item.dart';
+import 'package:sampleapp/widget/widget.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({Key? key}) : super(key: key);
@@ -16,14 +15,13 @@ class ProductList extends StatelessWidget {
 
       return productList.when(
           data: (list) {
-            print('task list ength ${list![0].description}');
             return SizedBox(
               height: 250 * WidgetsConstant.height,
               child: Expanded(
                 child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    itemCount: list.length,
+                    itemCount: list!.length,
                     itemBuilder: (BuildContext context, int index) =>
                         ProductListItem(
                           productItem: list[index],

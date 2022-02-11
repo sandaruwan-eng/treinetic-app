@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
+import 'package:sampleapp/style_guide/colors.dart';
 import 'package:sampleapp/style_guide/image_assets.dart';
 
 class ProductCard extends StatelessWidget {
@@ -14,7 +15,7 @@ class ProductCard extends StatelessWidget {
           padding: EdgeInsets.only(top: 30 * WidgetsConstant.height),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: primaryColor,
               border: Border.all(
                 color: Colors.white,
               ),

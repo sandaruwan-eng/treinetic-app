@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
 import 'package:sampleapp/models/product.dart';
 import 'package:sampleapp/screens/product_details_screen.dart';
-import 'package:sampleapp/style_guide/image_assets.dart';
 
 class ProductListItem extends StatelessWidget {
   const ProductListItem({Key? key, required this.productItem})

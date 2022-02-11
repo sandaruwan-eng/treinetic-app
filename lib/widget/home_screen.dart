@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
-import 'package:sampleapp/widget/main_product_card.dart';
-
-import 'category_button_list.dart';
-import 'product_list.dart';
+import 'package:sampleapp/widget/widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

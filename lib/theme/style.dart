@@ -18,7 +18,6 @@ ThemeData appTheme(BuildContext context) {
         titleSpacing: 10,
         iconTheme: IconThemeData(color: highEmphasisColor),
         backgroundColor: Colors.white,
-        // textTheme: TextTheme(headline6: Theme.of(context).textTheme.headline6),
       ),
       textTheme: TextTheme(
         headline1: GoogleFonts.roboto(

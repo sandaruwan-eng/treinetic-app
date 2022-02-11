@@ -148,7 +148,8 @@ class ProductScreenBottomPart extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-                          child: const Icon(Icons.ac_unit_outlined),
+                          child: const Icon(
+                              Icons.light_mode_outlined), //ac_unit_outlined
                         ),
                         Padding(
                           padding:

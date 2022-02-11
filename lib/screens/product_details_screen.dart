@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
 import 'package:sampleapp/models/product.dart';
-import 'package:sampleapp/widget/product_screen_bottom_part.dart';
-import 'package:sampleapp/widget/product_screen_top_image.dart';
+import 'package:sampleapp/widget/widget.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({Key? key, required this.arguments})

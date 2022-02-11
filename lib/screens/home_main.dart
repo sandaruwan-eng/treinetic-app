@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
-import 'package:sampleapp/widget/home_screen.dart';
+import 'package:sampleapp/widget/widget.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({Key? key}) : super(key: key);
@@ -13,18 +13,9 @@ class _HomeMainState extends State<HomeMain> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = <Widget>[
     HomeScreen(),
-    Icon(
-      Icons.camera,
-      size: 150,
-    ),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
+    SizedBox(),
+    SizedBox(),
+    SizedBox(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -55,11 +46,11 @@ class _HomeMainState extends State<HomeMain> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            // backgroundColor: Colors.w,
             icon: Icon(Icons.home),
             label: '',
           ),
@@ -68,7 +59,7 @@ class _HomeMainState extends State<HomeMain> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.camera),
+            icon: Icon(Icons.favorite),
             label: '',
           ),
           BottomNavigationBarItem(
@@ -76,7 +67,7 @@ class _HomeMainState extends State<HomeMain> {
             label: '',
           ),
         ],
-        currentIndex: _selectedIndex, //New
+        currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
       body: Container(

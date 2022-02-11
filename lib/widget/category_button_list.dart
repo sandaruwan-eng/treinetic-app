@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/constant/widgets_constant.dart';
-import 'package:sampleapp/widget/category_button_item.dart';
+import 'package:sampleapp/widget/widget.dart';
 
 class ProductCategoryList extends StatelessWidget {
   const ProductCategoryList({Key? key}) : super(key: key);
@@ -12,11 +12,6 @@ class ProductCategoryList extends StatelessWidget {
       'Popular',
       'Recent',
       'Other',
-      'Other',
-      'Other',
-      'Other',
-      'Other',
-      'Other',
       'Other'
     ];
     return Padding(
@@ -27,7 +22,7 @@ class ProductCategoryList extends StatelessWidget {
           child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: 5,
               itemBuilder: (BuildContext context, int index) =>
                   CategoryListItem(
                     buttonName: buttonName[index],
