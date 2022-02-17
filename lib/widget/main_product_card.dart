@@ -88,7 +88,7 @@ class ProductCard extends StatelessWidget {
           top: 80.0 * WidgetsConstant.height,
           child: Image.asset(
             VRBOX,
-            scale: 5,
+            scale: 6 * WidgetsConstant.height,
           ),
         )
       ],

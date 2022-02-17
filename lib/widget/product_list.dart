@@ -17,16 +17,14 @@ class ProductList extends StatelessWidget {
           data: (list) {
             return SizedBox(
               height: 250 * WidgetsConstant.height,
-              child: Expanded(
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: list!.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        ProductListItem(
-                          productItem: list[index],
-                        )),
-              ),
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: list!.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      ProductListItem(
+                        productItem: list[index],
+                      )),
             );
           },
           loading: () => Padding(

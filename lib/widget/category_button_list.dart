@@ -18,15 +18,12 @@ class ProductCategoryList extends StatelessWidget {
       padding: EdgeInsets.only(left: 20 * WidgetsConstant.width),
       child: SizedBox(
         height: 80 * WidgetsConstant.height,
-        child: Expanded(
-          child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (BuildContext context, int index) =>
-                  CategoryListItem(
-                    buttonName: buttonName[index],
-                  )),
+        child: ListView.builder(
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemCount: 5,
+          itemBuilder: (BuildContext context, int index) =>
+              CategoryListItem(buttonName: buttonName[index]),
         ),
       ),
     );
